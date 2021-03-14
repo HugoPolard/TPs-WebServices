@@ -1,0 +1,37 @@
+{
+  "name": "course.rest",
+  "description": "README.md",
+  "version": "1.0.0",
+  "author": "guillaume.chervet",
+  "engines": {
+    "node": "6.9.1",
+    "npm": "3.10.8"
+  },
+  "scripts": {
+    "lint": "eslint ./src/**/*.js",
+    "lint:watch": "watch \"npm run lint\" ./src",
+    "server": "node ./src/serverSoap.js",
+    "server:watch": "nodemon ./src/serverSoap.js",
+    "build": "npm run lint && npm run server",
+    "build:watch": "parallelshell \"npm run server:watch\" \"npm run lint:watch\""
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.13.0",
+    "lodash": "^4.17.20",
+    "soap": "^0.35.0",
+    "soap-server": "^0.1.0",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.18.2",
+    "nodemon": "latest",
+    "parallelshell": "^3.0.2",
+    "watch": "latest"
+  },
+  "main": "Sources/server.js",
+  "license": "ISC"
+}
